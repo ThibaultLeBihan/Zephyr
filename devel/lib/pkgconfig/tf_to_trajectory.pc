@@ -1,0 +1,8 @@
+prefix=/home/hydrosharks2/workspaceRos/devel
+
+Name: tf_to_trajectory
+Description: Description of tf_to_trajectory
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

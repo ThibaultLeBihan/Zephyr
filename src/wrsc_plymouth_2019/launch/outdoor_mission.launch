@@ -1,0 +1,23 @@
+<launch>
+
+	<node pkg="rosserial_arduino" type="serial_node.py" name="serial_node" output="screen">
+		<param name="port" value="/dev/ttyACM0"/>
+		<param name="baud" value="115200"/>
+	</node>
+
+	<node pkg="wrsc_plymouth_jegat" type="filter_wind.py" name="filter_wind" />
+	<node pkg="wrsc_plymouth_jegat" type="imu_9dof.py" name="imu_9dof"/>
+	<node pkg="trimaran_ros" type="gps.py" name="gps" />
+	<node pkg="trimaran_ros" type="mode" name="mode" />
+
+	<node name="mission" pkg="wrsc_plymouth_jegat" type="mission.py" args="--test" output='screen' />
+		<arg name="simulation" default="0" />
+		<param name="simu" type="int" value="$(arg simulation)" />
+		<arg name="mission" default="mission.txt" />
+		<param name="mission" type="String" value="$(arg mission)" />
+		<arg name="m_mode" default="0" />
+		<param name="m_mode" type="int" value="$(arg m_mode)" />
+
+	<node name="record" pkg="rosbag" type="record" args="record -a -o $(find wrsc_plymouth_jegat)/rosbags/rsbg_mission" />
+
+</launch>

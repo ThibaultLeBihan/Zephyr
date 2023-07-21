@@ -1,0 +1,8 @@
+prefix=/home/hydrosharks2/workspaceRos/devel
+
+Name: plymouth_internship_2019
+Description: Description of plymouth_internship_2019
+Version: 0.0.0
+Cflags: -I/home/hydrosharks2/workspaceRos/devel/include
+Libs: -L${prefix}/lib 
+Requires: 

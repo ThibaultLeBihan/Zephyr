@@ -1,0 +1,7 @@
+set(plymouth_internship_2019_SETUP_PY_SETUP_MODULE "distutils.core")
+set(plymouth_internship_2019_SETUP_PY_VERSION "0.0.0")
+set(plymouth_internship_2019_SETUP_PY_SCRIPTS "")
+set(plymouth_internship_2019_SETUP_PY_PACKAGES "Communications;PiCamera")
+set(plymouth_internship_2019_SETUP_PY_PACKAGE_DIRS "src/Communications;src/PiCamera")
+set(plymouth_internship_2019_SETUP_PY_MODULES "")
+set(plymouth_internship_2019_SETUP_PY_MODULE_DIRS "")

@@ -1,0 +1,8 @@
+prefix=/home/hydrosharks2/workspaceRos/install
+
+Name: wrsc_plymouth_jegat
+Description: Description of wrsc_plymouth_jegat
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

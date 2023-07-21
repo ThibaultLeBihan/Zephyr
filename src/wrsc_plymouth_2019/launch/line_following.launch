@@ -1,0 +1,17 @@
+<launch>
+
+	<node type="rviz" name="rviz" pkg="rviz" args="-d $(find wrsc_plymouth_jegat)/src/display/zephyr.rviz"/>
+	<node pkg="rostopic" type="rostopic" name="gps_origin" args="pub /launch_send_gps_origin geometry_msgs/Vector3 -- 50.695251 -4.236975 0" output="screen"/>
+	<node name="simu_boat" pkg="wrsc_plymouth_jegat" type="simu_boat.py" args="--test" respawn="true" output='screen' />
+	<node name="controler" pkg="wrsc_plymouth_jegat" type="controler.py" args="--test" respawn="true" output='screen' />
+	<node name="rviz_displayer_line_following" pkg="wrsc_plymouth_jegat" type="rviz_displayer_line_following.py" args="--test" respawn="true" output='screen' />
+	<node name="lines_to_follow" pkg="wrsc_plymouth_jegat" type="lines_to_follow.py" args="--test" respawn="true" output='screen' />
+
+<node name="tf_to_path" pkg="tf_to_trajectory" type="tf_to_path.py">
+    <param name="parent_frame_id" value="map"/>
+    <param name="child_frame_id" value="coque"/>
+    <param name="out_topic_name" value="/my_path"/>
+    <param name="append_rate" value="5"/>
+  </node>
+	
+</launch>

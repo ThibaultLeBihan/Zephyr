@@ -1,0 +1,8 @@
+prefix=/home/hydrosharks2/workspaceRos/install
+
+Name: communication_example
+Description: Description of communication_example
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
